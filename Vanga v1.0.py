@@ -2,15 +2,6 @@
 import random
 import csv
 import math
-from collections import Counter
-
-# === Общий supply ===
-total_supply = 4818
-
-# === Вставь реальные подарки (до 10) ===
-# Формат: ("Model", "Background", "Pattern")
-real_gifts = [    ('Mantis', 'Mint Green', 'High Hat'),    ('Market Rally', 'Gunmetal', 'Ram of Amun'),    ('Diamond', 'English Violet', 'Trophy'),    ('Pug Royale', 'Amber', 'Elephant'),    ('Rose Gold', 'Shamrock Green', 'Doctor Hat'),    ('Rainbow Pills', 'Rosewood', 'Elf Hat'),    ('Ouroboros', 'Caramel', 'Ushanka'),    ('Mantis', 'Fandango', 'Flower'),    ('Interstellar', 'Dark Green', 'Wagasa'),    ('Hologram', 'Ranger Green', 'Sauron'),]
-# === Списки всех атрибутов с их процентами ===
 models = [
     ("Diamond", 0.5),
     ("Gold Rush", 0.5),
@@ -411,6 +402,95 @@ patterns = [
     ("Spirit Impala", 0.5),
     ("Hand of God", 0.5)
 ]
+from collections import Counter
+
+# === Общий supply ===
+total_supply = 4818
+
+# === Вставь реальные подарки (до 10) ===
+# Формат: ("Model", "Background", "Pattern")
+real_gifts = [
+    ("Mantis", "Mint Green", "High Hat"),
+    ("Market Rally", "Gunmetal", "Ram of Amun"),
+    ("Diamond", "English Violet", "Trophy"),
+    ("Pug Royale", "Amber", "Elephant"),
+    ("Rose Gold", "Shamrock Green", "Doctor Hat"),
+    ("Rainbow Pills", "Rosewood", "Elf Hat"),
+    ("Ouroboros", "Caramel", "Ushanka"),
+    ("Mantis", "Fandango", "Flower"),
+    ("Interstellar", "Dark Green", "Wagasa"),
+    ("Hologram", "Ranger Green", "Sauron"),
+    ("Neon Tube", "Electric Indigo", "Gingerbread"),
+    ("Candle Wax", "Emerald", "Flipper"),
+    ("Argent", "Caramel", "Flashlight"),
+    ("Needle", "Navy Blue", "Bicorne"),
+    ("Mantis", "Cappuccino", "Pilot Hat"),
+    ("Blue Velvet", "Chocolate", "Tribal Shield"),
+    ("Crypto Gem", "Old Gold", "Horned Helm"),
+    ("Moon Cat", "Purple", "Bunny Ears"),
+    ("Aqua Ring", "Ranger Green", "Horseshoe"),
+    ("Blue Dolphin", "Khaki Green", "Legionary"),
+    ("Mario Pipe", "Burnt Sienna", "Lion of Babylon"),
+    ("Rusty Nail", "Camo Green", "Chili Pepper"),
+    ("Blue Dolphin", "Electric Purple", "Thief"),
+    ("X-Ray", "French Violet", "Scarab"),
+    ("Explosive", "Tomato", "Okami Wolf"),
+    ("Pepe Band", "Mexican Pink", "Cheese"),
+    ("Aqua Ring", "Dark Green", "Pearl"),
+    ("Ouroboros", "Cyberpunk", "Kashket"),
+    ("Mario Pipe", "French Violet", "Egg"),
+    ("Rainbow Pills", "Lavender", "Oculus"),
+    ("Firebronze", "Onyx Black", "Legionary"),
+    ("Moon Cat", "Burgundy", "Scorpion"),
+    ("Explosive", "Raspberry", "Horn"),
+    ("Jade Serpent", "Rosewood", "Cavalier Hat"),
+    ("Ouroboros", "Aquamarine", "Hersir"),
+    ("Needle", "Cobalt Blue", "Shield"),
+    ("Hachikō", "Pistachio", "Paw Print"),
+    ("Jade Serpent", "Electric Purple", "Mushroom"),
+    ("Vague Dream", "Chocolate", "Full Moon"),
+    ("Hachikō", "Mint Green", "Champagne"),
+    ("Vague Dream", "Steel Grey", "White Deer"),
+    ("Rusty Nail", "Tomato", "Horn"),
+    ("Ultramarine", "Rosewood", "Mining Helmet"),
+    ("Firebronze", "Black", "Doctor Hat"),
+    ("Mantis", "Gunmetal", "Winged Helmet"),
+    ("Rose Gold", "Black", "Nemean Lion"),
+    ("Skyline", "Cappuccino", "Sword Fight"),
+    ("Blue Velvet", "Fandango", "Nemean Lion"),
+    ("Hachikō", "Ranger Green", "Wagasa"),
+    ("Aqua Ring", "French Blue", "Pomegranate"),
+    ("Pug Royale", "Celtic Blue", "Ice Pop"),
+    ("Rainbow Pills", "Mexican Pink", "The Eye"),
+    ("Mantis", "Amber", "Wagasa"),
+    ("Pearl Glam", "Dark Green", "Full Moon"),
+    ("Monster Eye", "Navy Blue", "Flying Dragon"),
+    ("Duck Amulet", "Gunmetal", "Brain"),
+    ("Resistance", "Azure Blue", "Celtic Cross"),
+    ("Candle Wax", "Old Gold", "Sun Lion"),
+    ("Mario Pipe", "Burnt Sienna", "Dagger"),
+    ("Candle Wax", "Rosewood", "Peaked Cap"),
+    ("Argent", "Tomato", "Love Letter"),
+    ("Rose Thorn", "Black", "Bandage"),
+    ("Ocelot", "Fire Engine", "Cowboy Hat"),
+    ("Neon Tube", "Old Gold", "Eikthyrnir"),
+    ("Argent", "Rifle Green", "Dagger"),
+    ("Rainbow Pills", "Black", "Flower Cross"),
+    ("X-Ray", "Feldgrau", "Conical Hat"),
+    ("Hologram", "English Violet", "Flashlight"),
+    ("Skyline", "Aquamarine", "Two Katanas"),
+    ("Diamond", "Black", "Calm Wolf"),
+    ("Blue Velvet", "Marine Blue", "Piggy Bank"),
+    ("Blue Dolphin", "Burgundy", "Jewel"),
+    ("Vague Dream", "Dark Lilac", "Jörmungandr"),
+    ("Rose Thorn", "Light Olive", "Moon"),
+    ("Pencil", "Chocolate", "Bubble Tea"),
+    ("Red Fang", "Raspberry", "Glasses"),
+    ("Explosive", "Azure Blue", "Conical Hat"),
+    ("Skyline", "Lavender", "Horned Helm"),
+    ("Needle", "Turquoise", "Lotus Flower"),
+]
+
 # === Создаём счётчики уже использованных атрибутов ===
 used_models = Counter([gift[0] for gift in real_gifts])
 used_backgrounds = Counter([gift[1] for gift in real_gifts])
